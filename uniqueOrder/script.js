@@ -1,6 +1,14 @@
 var uniqueInOrder=function(iterable){
   const answer = [];
-  iterable.forEach((item) => {
+  let splitIterable = [];
+
+  if(typeof iterable !== 'object') {
+    splitIterable = iterable.split('');
+  } else {
+    splitIterable = iterable;
+  };
+
+  splitIterable.forEach((item) => {
     if (answer[answer.length -1] === item){
       answer;
     } else {
@@ -11,6 +19,5 @@ var uniqueInOrder=function(iterable){
   return answer;
 };
 
-
+uniqueInOrder([1 ,2 ,3, 4, 5, 5, 4]);
 uniqueInOrder('AAAABBBCCDAABBB');
-//                                 ['A','B','C','D','A','B']
